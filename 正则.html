@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则规则</title>
+</head>
+
+<body>
+  <div>
+    <h3>1. 正则概念：是一种文本模式。普通字符（a-z）+特殊字符(元字符)</h3>
+    <p>^[0-9]+abc$</p>
+    <p>
+      <span>^ 开始位置</span>
+      <span>是$ 结束位置</span><br>
+      <span>[0-9] 匹配0-9其中之一</span><br>
+      <span>[0-9]+ 匹配其中只一或多</span><br>
+      <span>{2,10}  2-10个字符长度</span><br>
+      <span>/g 全局配置表</span><br>
+      <span>* 匹配前面的子表达式0次或多次</span><br>
+      <span>+ 一次或多次</span><br>
+      <span>？0次或1次</span>
+    </p>
+  </div>
+  <div>
+    <h3>2. JavaScript String对象————https://www.runoob.com/jsref/jsref-obj-string.html</h3>
+    <h4>2.1 String属性</h4>
+    <p>length：字符串长度<br>constructor :返回创建的函数<br>prototype：添加对象和方法是全局属性</p>
+    <h4>2.2 String方法</h4>
+    <p>charAt(3) ——返回指定位置字符串</p>
+    <p>charAtCode(3)——返回指定位置字符串的Unicode编码</p>
+    <p>string.concat(string1)—— 连接两个或者多个字符</p>
+    <p>match(RegExp)——匹配符合正则的字符串</p>
+    <p>string.includes(searchvalue,start)——判断是否包含指定字符串，返回true</p>
+    <p>replace(searchvalue, newvalue)—— searchvalue为RegExp或字符串 </p>
+    <p>slice(start(包含),end(不包含))——截取字符串</p>
+    <p>substr(start,length)——截取字符串</p>
+    <p>substring(from(包含), to(不包含))——截取字符串</p>
+    <script>
+      var s = 'haoqian'
+      var t = s.substring(0, 2)
+      console.log(t)
+    </script>
+    <p>split()——把字符串分割为数组</p>
+    <p>startsWith(searchvalue, start)——检测字符串是否以指定字符串开始 返回true/false</p>
+    <p>trim()——去除两边空字符串</p>
+    <p>toLowerCase() toUpperCase()——小大写转换</p>
+    <p>toString()——返回一个字符串</p>
+    <p>search(searchvalue) 搜索指定字符串或正则匹配</p>
+    <p>indexOf——返回某个字符串出现的指定位置</p>
+  </div>
+</body>
+
+</html>

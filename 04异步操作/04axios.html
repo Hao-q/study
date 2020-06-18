@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src="./web_back/js/jquery-1.12.4.min.js"></script>
+  <script src="./web_front/js/axios.min.js"></script>
+  <script>
+    /*
+      为什么要学习axios库？
+        之前我们使用的都是jQuery的ajax操作，使用非常简单
+        如果某个页面我仅仅希望使用ajax功能，引入整个jQuery的体积就比较大。
+        - 以后我们会学习很多体积小，功能独立的js库
+      讲解步骤：
+        - 学习jQuery的ajax的新功能和新用法
+        - 学习axios的使用
+          - 进行前台页面的制作
+    */
+
+    /*
+      // 介绍了jQueryajax的error和complete的使用
+    $.ajax({
+      type: 'get',
+      url: 'http://localhost:3005/common/get',
+      data: {
+        username: 'jack',
+        userAge: 18
+      },
+      // 成功时的处理函数
+      success: function (res) {
+        console.log(res);
+      },
+      // 失败时的处理函数
+      error: function (err) {
+        console.log('请求出现了错误', err);
+      },
+      // 无论成功还是失败都会执行
+      complete: function () {
+        console.log('反正都会执行，随便写楼')
+      }
+    }); */
+
+    // jQuery的ajax的第二种使用形式：
+    //    - 注意：写法为  $.ajax({..}).then().fail().always()
+    $.ajax({
+      type: 'get',
+      url: 'http://localhost:3005/common/get',
+      data: {
+        username: 'jack',
+        userAge: 18
+      }
+    })
+      // then() 成功时的处理函数，相当于success
+      .then(function (res) {
+        console.log(res);
+      })
+      // fail() 失败时的处理函数，相当于error
+      .fail(function (err) {
+        console.log('请求失败了', err);
+      })
+      // always() 无论成功还是失败都会执行，相当于complete
+      .always(function () {
+        console.log('反正都会执行，随便写啦');
+      });
+
+    // axios的使用:
+    axios({
+      method: 'get', // 请求方式
+      url: 'http://localhost:3005/common/get',
+      params: { // 请求参数
+        username: 'jack',
+        userAge: 18
+      }
+    })
+      // then() 成功时的处理函数
+      //    - axios的res与jQuery不太相同，多包裹了一层对象
+      //      - axios中的res.data相当于jQuery中的res，是一样的
+      .then(function (res) {
+        console.log(res.data); // 访问服务端响应的数据内容
+      })
+      // catch() 失败时的处理函数
+      .catch(function (err) {
+        console.log('请求失败了', err);
+      })
+      // finally() 无论成功还是失败时都会执行
+      .finally(function () {
+        console.log('反正都会执行');
+      });
+
+  </script>
+</body>
+
+</html>

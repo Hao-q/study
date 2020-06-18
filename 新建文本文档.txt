@@ -1,0 +1,6 @@
+修改vant主题颜色
+1，在main.js中  引入的样式.css 改为.less
+2, 在vue-cli项目中
+  创建vue.config.js 进行配置  和webpack项目中的配种不同  
+在vue-cli中看具体配置 
+mstsc /v:IQBJ-L0130.paicdom.local:60000

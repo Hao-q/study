@@ -1,0 +1,4 @@
+1.原生clas类
+2.class继承封装
+3.函数的封装
+4.promise

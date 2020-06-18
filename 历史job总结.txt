@@ -1,0 +1,14 @@
+1.赋值文本到剪切板功能的实现：Clipboard.js
+	http://www.htmleaf.com/jQuery/jquery-tools/201601303087.html
+2.简单分页插件的实现
+https://www.jq22.com/jquery-info22105
+3双日历插件
+https://www.jq22.com/jquery-info1087
+4.简单风格下拉菜单
+https://www.jq22.com/jquery-info12365
+5.复杂分页插件 
+https://www.jq22.com/jquery-info21889
+6 简单多样tab
+
+
+jquery知识点问题

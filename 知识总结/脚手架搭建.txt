@@ -1,0 +1,129 @@
+react脚手架搭建
+1.全局安装 yarn add -g create-react-app
+安装完成后，生成一个新项目
+2.create-react-app my-app
+3运行npm start
+
+
+VUECLI脚手架搭建
+1.首次全局安装  npm  i -g @vue/cli  
+或者  yarn global add @vue/cli
+（全局方式-g   global）
+(查看脚手架版本vue--version)
+
+
+2.创建项目  vue create  项目名
+
+
+3.执行 yarn serve   /  npm run serve
+
+vue路由两种方式：hash #和history  反向代理Nginx
+//路由跳转的方式
+//前置守卫
+window.location.hash页面内跳转，跳转的是页面的内容   
+window.location.href页面之间的跳转
+window.onhashchange = ()=>{}
+
+路由传参
+query传参  针对path  this.$route.query
+params传参  针对name   this.$route.params
+
+$router 只整个vue实例  实现路由跳转
+$route 路由传参接收
+
+
+1.路由跳转
+router-link在页面渲染的时候就加载对应的路由（所以退出登录不可以用此）
+this.$touter.push() 可以用在对应的事件方法中实现跳转
+
+2.路由传参
+三种方式
+（1）path和id传参  页面获取使用this.$route.params.id
+this.$router.push({
+path:`/ho/${id}`
+})
+
+路由配置
+{
+    path:'/ho/:id',
+    name
+    component
+}
+
+页面获取参数 this.$route.params.id
+
+(2)刷新页面面数据会丢失
+	name值匹配路由 ，通过params来传递参数
+
+this.$router.push({
+    name:'',
+    params:{
+	id:id
+}
+})
+
+{
+path，
+name，
+component
+}
+
+子组件获取参数：this.$route.params.id
+
+
+(3)path匹配路由。query传递参数  传递的参数会显示在url后面?id=
+path:'',
+query:{
+  id:id
+}
+
+获取参数 this.$route.query.id
+
+2.声明式导航 router-link 静态
+编程式导航：程序代码来实现，动态的
+路由对象.push(锚点信息)
+路由对象.back(）后退
+路由对象.forward(）前进
+路由对象在main.js中 就是router   在组件实例中就是this.$router
+
+
+3.路由守卫，导航守卫，路由拦截
+分为三种
+（1）全局路由守卫 一般写在main.js中
+	1.全局前置钩子（所有路由执行以前都会经过）
+router.beforeEach((to, from, next)=>{
+	//业务代码
+	next()
+})
+	2.后置钩子
+router.afterEach((to, from)=>{
+
+})
+（2）组件内路由守卫
+2.1到达这个组件时
+	beforeRouteEnter:(to，from，next）=>{
+//声明周期的原因，访问不到data属性，需要给一个回调
+	next（vm=>{
+
+	}）
+}
+
+2.2离开这个组件时
+beforeRouteLeave:(to, from, next)=>{
+	点击其他组件时判断是否离开
+}
+（3）路由独享守卫
+
+beforeEnter:(to,from,next)=>{  }
+用法与全局的一致，只是将其写入路由对象中，只在这个路由下起作用
+
+
+
+1.表头与内容错位
+全局设置样式在app.vue中
+body .el-table th.gutter{
+    display: table-cell!important;
+}
+
+
+
